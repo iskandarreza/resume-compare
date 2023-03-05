@@ -1,38 +1,189 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#root{
+  width: 100%;
   text-align: center;
 }
-
+.App {
+  width: 90%;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 5%;
+  /* border: 5px solid red; */
+}
+#logo{
+  position: relative;
+  display: inline-block;
+  width: 350px;
+  margin-bottom: -20px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.contents {
+  margin-top: 1.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.top {
+  display: flex;
+}
+
+.hidden-text-container {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}
+
+.visible-text {
+  bottom: 25%;
+  position: absolute;
+  font-size: small;
+}
+
+.hidden-text {
+  display: none;
+}
+
+#submit{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  cursor: pointer;
+}
+#submit:hover{
+  background-color: rgb(58, 142, 45);
+  border: 1px solid green;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  width: 100%;
+}
+
+.input-container{
+  position: flex;
+  flex-direction: row;
+  width: 70%;
+  /* border: 4px solid green; */
+}
+
+textarea{
+  position: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 25vh;
+  padding: 5px;
+  border: 1px solid black;
+  resize: none;
+  overflow-y: scroll;
+}
+
+.toggle{
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  cursor: pointer;
+}
+
+.toggle label {
+  margin: auto;
+}
+
+.preview-container{
+  width: 96%;
+  height: 25vh;
+  border: 1px solid black;
+  margin-left: 1rem;
+  overflow-y: scroll;
+}
+.job-text{
+  text-align: initial;
+  font-size: smaller;
+  padding: 5px;
+}
+
+.skill-table{
+  position: flex;
+  flex-direction: row;
+  width: 28%;
+  height: calc(50vh + 25px);
+}
+
+table {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+}
+table thead {
+  /* head takes the height it requires, 
+  and it's not scaled when table is resized */
+  flex: 0 0 auto;
+  width: calc(100% - 0.9em);
+}
+table tbody {
+  /* body takes all the remaining available space */
+  flex: 1 1 auto;
+  display: block;
+  overflow-y: scroll;
+}
+table tbody tr {
+  width: 100%;
+}
+table thead, table tbody tr {
+  display: table;
+  table-layout: fixed;
+}
+
+.header-row{
+  background-color: rgb(78, 78, 78);
+  font-weight: 500;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+  background-color: grey;
+  color: white;
+  padding: .5em 0 1.5em 0;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 850px) {
+  .main {
+    flex-direction: column;
+    flex-flow: column;
   }
-  to {
-    transform: rotate(360deg);
+  .visible-text {
+    display: none;
+  }
+  .input-container {
+    margin: auto;
+    width: 90%;
+  }
+  .skill-table {
+    width: 75%;
+    margin: auto;
+    padding-top: 1em;
+    height: auto;
+  }
+  table thead {
+    width: 100%
+  }
+  table tbody {
+    overflow-y: visible;
   }
 }
